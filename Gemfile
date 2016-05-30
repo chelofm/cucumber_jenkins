@@ -1,4 +1,7 @@
 # A sample Gemfile
 source "https://rubygems.org"
 
-# gem "rails"
+gem "cucumber"
+gem "capybara"
+gem "rspec-expectations"
+gem "selenium-webdriver"
