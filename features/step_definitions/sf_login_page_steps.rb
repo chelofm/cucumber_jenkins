@@ -2,7 +2,7 @@ Given(/^I am on Salesforce login page$/) do
   visit 'https://login.salesforce.com'
 end
 
-When(/^I fill in "([^"]*)" field with "([^"]*)"$/) do |field_name, value|
+When(/^I fill in "(.+)" field with "(.+)"$/) do |field_name, value|
   fill_in field_name.downcase, :with => value
 end
 
