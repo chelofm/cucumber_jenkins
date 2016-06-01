@@ -1,1 +1,1 @@
-# cucumber_jenkins
+# Integrating Jenkins with Cucumber projects
