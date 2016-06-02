@@ -3,27 +3,31 @@ When(/^I click "(.+)" button$/) do |button_name|
 end
 
 When(/^I fill in "(.+)" with "(.+)"$/) do |field, value|
-  @product_name = nil
-  if value.downcase.eql?("product") || value.downcase.eql?("code")
-    @product_name = value.downcase.eql?("product")? Helper.get_uuid_name(value) : Helper.get_uuid()
-  else
-    @product_name = value
-  end
-  fill_in field, :with => @product_name
+  fill_in field, :with => value
 end
 
-Then(/^I should see 'Product name'$/) do
-  page.should have_content(@product_name)
+Then(/^I should see "(.+)"$/) do |product_name|
+  expect(page).to have_content(product_name)
 end
 
-
-When(/^I fill in "(.+)" with "(\D+)" to look for$/) do |field, text|
-  fill_in field, @product_name
+When(/^I fill in "(.+)" with "(.+)" to look for$/) do |field_id, text|
+  find("input[id$=#{field_id}]").set text
 end
 
-When(/^I click "([^"]*)" link$/) do |link_name|
+When(/^I click "(.+)" link$/) do |link_name|
   click_link link_name
 end
 
-Then(/^I should see "([^"]*)" link$/) do |arg1|
+Then(/^I should see "(.+)" link$/) do |link_name|
+  expect(page).to have_link link_name
+end
+
+When(/^I confirm deletion action$/) do
+  page.driver.browser.switch_to.alert.accept
+end
+
+Then(/^I should see "(\D+)" home page$/) do |page_title|
+  within('h1.pageType') do
+    expect(page).to have_content page_title
+  end
 end

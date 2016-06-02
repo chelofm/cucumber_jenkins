@@ -6,13 +6,22 @@ Background:
 Scenario: Create a new Product
     Given I clicked "Products" tab
     When I click "New" button
-    And I fill in "Name" with "Product"
-    And I fill in "ProductCode" with "Code"
+    And I fill in "Name" with "Product_458"
+    And I fill in "ProductCode" with "458"
     And I click "Save" button
-    Then I should see 'Product name'
+    Then I should see "Product_458"
 
+Scenario: Activate a Product
     Given I clicked "Products" tab
-    When I fill in "search" with "Product" to look for
+    When I fill in "srch_Input" with "Product_458" to look for
     And I click "Find Product" button
     And I click "Activate" link
-    Then I should see "Desactivate" link
+    Then I should see "Deactivate" link
+
+Scenario: Delete a Product
+    Given I clicked "Products" tab
+    When I click "Find Product" button
+    And I click "Product_458" link
+    And I click "Delete" button
+    And I confirm deletion action
+    Then I should see "Products" home page

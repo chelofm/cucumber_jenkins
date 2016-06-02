@@ -11,7 +11,7 @@ When(/^I click 'Log in to Sandbox'$/) do
 end
 
 Then(/^I should see Salesforce home page$/) do
-  page.has_content?('Salesforce')
+  expect(page).to have_link('Home')
 end
 
 Given(/^I logged in Salesforce as "(\w+)" user$/) do |profile|
