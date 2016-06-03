@@ -14,10 +14,6 @@ When(/^I fill in "(.+)" with "(.+)" to look for$/) do |field_id, text|
   find("input[id$=#{field_id}]").set text
 end
 
-When(/^I click "(.+)" link$/) do |link_name|
-  click_link link_name
-end
-
 Then(/^I should see "(.+)" link$/) do |link_name|
   expect(page).to have_link link_name
 end
