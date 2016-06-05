@@ -1,5 +1,5 @@
 require 'cucumber/rake/task'
 
 Cucumber::Rake::Task.new(:features) do |t|
-    t.cucumber_opts = "--tags @smoke"
+    t.cucumber_opts = "--format progress --tags @smoke"
 end
