@@ -14,7 +14,7 @@ Scenario: Create a new Lead
     And I click "Save" button
     Then I should see "Lead_459"
 
-@create_view_lead
+@create_view
 Scenario: Create a new Lead View
     Given I clicked "Leads" tab
     When I click "Create New View" link
