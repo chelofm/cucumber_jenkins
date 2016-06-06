@@ -1,15 +1,15 @@
 require 'cucumber/rake/task'
 
 Cucumber::Rake::Task.new(:leads) do |t|
-    t.cucumber_opts = "--format pretty --tags @leads"
+    t.cucumber_opts = "--format pretty --tags @leads --format json -o reports/salesforce_features.json"
 end
 
 Cucumber::Rake::Task.new(:products) do |t|
-    t.cucumber_opts = "--format pretty --tags @products"
+    t.cucumber_opts = "--format pretty --tags @products --format json -o reports/salesforce_features.json"
 end
 
 Cucumber::Rake::Task.new(:all) do |t|
-    t.cucumber_opts = "--format pretty"
+    t.cucumber_opts = "--format pretty --format json -o reports/salesforce_features.json"
 end
 
 task :scenarios_with_tags do
