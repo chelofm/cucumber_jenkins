@@ -7,7 +7,3 @@ task :features_with_tags do
     end
     Rake::Task[:run].invoke()
 end
-
-# Cucumber::Rake::Task.new(:features) do |t|
-#     t.cucumber_opts = "--format progress --tags @smoke"
-# end

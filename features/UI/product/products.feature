@@ -1,8 +1,10 @@
+@products
 Feature: Handle Products
 
 Background:
     Given I logged in Salesforce as "Admin" user
 
+@create_object
 Scenario: Create a new Product
     Given I clicked "Products" tab
     When I click "New" button
@@ -11,6 +13,7 @@ Scenario: Create a new Product
     And I click "Save" button
     Then I should see "Product_458"
 
+@activate_product
 Scenario: Activate a Product
     Given I clicked "Products" tab
     When I fill in "srch_Input" with "Product_458" to look for
@@ -18,6 +21,7 @@ Scenario: Activate a Product
     And I click "Activate" link
     Then I should see "Deactivate" link
 
+@delete_object @delete_product
 Scenario: Delete a Product
     Given I clicked "Products" tab
     When I click "Find Product" button

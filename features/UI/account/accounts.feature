@@ -1,8 +1,10 @@
+@accounts
 Feature: Handle Accounts
 
 Background:
     Given I logged in Salesforce as "Admin" user
 
+@create_object
 Scenario: Create a new Account
     Given I clicked "Accounts" tab
     When I click "New" button
@@ -11,7 +13,8 @@ Scenario: Create a new Account
     And I click "Save" button
     Then I should see "Account_124"
 
-Scenario: Create a new View Account
+@create_view
+Scenario: Create a new Account View
     Given I clicked "Accounts" tab
     When I click "Create New View" link
     And I fill in "fname" with "Account View 01"

@@ -1,8 +1,10 @@
+@leads
 Feature: Handle Leads
 
 Background:
     Given I logged in Salesforce as "Admin" user
 
+@create_object
 Scenario: Create a new Lead
     Given I clicked "Leads" tab
     When I click "New" button
@@ -11,3 +13,11 @@ Scenario: Create a new Lead
     And I fill in "lea3" with "Z Company"
     And I click "Save" button
     Then I should see "Lead_458"
+
+@create_view_lead
+Scenario: Create a new Lead View
+    Given I clicked "Leads" tab
+    When I click "Create New View" link
+    And I fill in "fname" with "Lead View 01"
+    And I click "Save" button
+    Then I should see "Lead View 01"
