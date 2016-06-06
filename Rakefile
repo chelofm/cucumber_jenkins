@@ -5,6 +5,7 @@ task :features_with_tags do
     Cucumber::Rake::Task.new(:run) do |t|
         t.cucumber_opts = "--format pretty --tags @#{tags}"
     end
+    Rake::Task[:run].invoke()
 end
 
 # Cucumber::Rake::Task.new(:features) do |t|
