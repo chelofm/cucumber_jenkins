@@ -15,7 +15,7 @@ end
 task :scenarios_with_tags do
     tags = ENV['TAGS']
     Cucumber::Rake::Task.new(:run) do |t|
-        t.cucumber_opts = "--format pretty --tags #{tags} --format json -o cucumber.json"
+        t.cucumber_opts = "--format pretty --tags #{tags} --format json -o reports/cucumber.json"
     end
     Rake::Task[:run].invoke()
 end
